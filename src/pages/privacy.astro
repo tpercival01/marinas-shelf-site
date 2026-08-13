@@ -1,0 +1,523 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { site } from "../config/site";
+---
+
+<BaseLayout
+  title="Privacy Policy"
+  description={`Privacy Policy for ${site.name}, the personal reading tracker for iPhone.`}
+>
+  <section class="page-hero">
+    <div class="container hero-inner">
+      <p class="eyebrow">Privacy Policy</p>
+
+      <h1>
+        Your reading life<br />
+        is yours.
+      </h1>
+
+      <p>
+        Bookroom is designed around local storage, without accounts,
+        advertising or behavioural tracking.
+      </p>
+
+      <span class="updated">
+        Last updated: 13 August 2026
+      </span>
+    </div>
+  </section>
+
+  <section class="policy">
+    <div class="container policy-layout">
+      <aside>
+        <p class="eyebrow">At a glance</p>
+
+        <div class="summary">
+          <div>
+            <strong>No account</strong>
+            <span>Bookroom does not require you to create an account.</span>
+          </div>
+
+          <div>
+            <strong>No advertising</strong>
+            <span>Bookroom contains no advertising or advertising trackers.</span>
+          </div>
+
+          <div>
+            <strong>No analytics</strong>
+            <span>
+              The current version does not use analytics or crash-reporting
+              services.
+            </span>
+          </div>
+
+          <div>
+            <strong>Local-first</strong>
+            <span>
+              Your personal library and reading records are stored on your
+              device.
+            </span>
+          </div>
+        </div>
+      </aside>
+
+      <article class="policy-content">
+        <section>
+          <h2>1. About this policy</h2>
+
+          <p>
+            This Privacy Policy explains how {site.name} handles information
+            when you use the iPhone app.
+          </p>
+
+          <p>
+            Bookroom is designed as a local-first reading tracker. It does not
+            require an account and does not operate a Bookroom server containing
+            your personal reading library.
+          </p>
+        </section>
+
+        <section>
+          <h2>2. Information stored on your device</h2>
+
+          <p>
+            Bookroom stores information needed to provide its reading-tracking
+            features locally on your device. Depending on the features you use,
+            this may include:
+          </p>
+
+          <ul>
+            <li>books in your library</li>
+            <li>reading status and progress</li>
+            <li>start and finish dates</li>
+            <li>ratings</li>
+            <li>private Shelf Memories</li>
+            <li>rereading records</li>
+            <li>shelf positions and horizontal book stacks</li>
+            <li>decorations and room appearance settings</li>
+            <li>recent book-search queries</li>
+            <li>captured book-spine images</li>
+            <li>a custom room-background image, if you choose one</li>
+          </ul>
+
+          <p>
+            Bookroom does not implement its own cloud-sync service for this
+            information.
+          </p>
+        </section>
+
+        <section>
+          <h2>3. Book search and Open Library</h2>
+
+          <p>
+            Bookroom uses Open Library to provide book catalogue search,
+            metadata and discovery features.
+          </p>
+
+          <p>
+            When you perform a book search, the search text you enter is sent
+            to Open Library so that matching books can be returned.
+          </p>
+
+          <p>
+            When you scan an ISBN barcode, the detected ISBN is used as a book
+            search and is therefore sent to Open Library.
+          </p>
+
+          <p>
+            Bookroom may also request suggested books when you open the
+            Add Book screen. To generate those suggestions, Bookroom may send
+            a genre or author name taken from one of your recent library
+            entries to Open Library.
+          </p>
+
+          <p>
+            These requests necessarily communicate with Open Library over the
+            internet. Open Library may receive ordinary network information
+            associated with a request, such as your IP address and request
+            metadata, according to its own practices.
+          </p>
+
+          <p>
+            Bookroom does not send your complete library, Shelf Memories,
+            ratings, reading progress or shelf arrangement to Open Library.
+          </p>
+
+          <p>
+            You can learn more about Open Library at
+            <a
+              href="https://openlibrary.org/"
+              rel="external noreferrer"
+            >
+              openlibrary.org
+            </a>.
+          </p>
+        </section>
+
+        <section>
+          <h2>4. Book cover images</h2>
+
+          <p>
+            Search results and books in your library may contain cover artwork
+            supplied by Open Library.
+          </p>
+
+          <p>
+            When Bookroom displays one of these covers, the image may be
+            downloaded from Open Library's cover-image service. This creates a
+            normal network request to that service.
+          </p>
+        </section>
+
+        <section>
+          <h2>5. Camera and photos</h2>
+
+          <p>
+            Bookroom may request access to your camera for two features:
+            scanning ISBN barcodes and capturing photographs of physical book
+            spines.
+          </p>
+
+          <p>
+            Captured spine images are stored locally by Bookroom. The current
+            version does not automatically upload those photographs to a
+            Bookroom server or third-party image-processing service.
+          </p>
+
+          <p>
+            You can also choose an image from your photo library to use as a
+            custom reading-room background. The selected image is copied into
+            Bookroom's local storage. The current version does not automatically
+            upload that image.
+          </p>
+        </section>
+
+        <section>
+          <h2>6. Shelf Memories</h2>
+
+          <p>
+            Shelf Memories are private notes attached to completed reading
+            records.
+          </p>
+
+          <p>
+            Shelf Memories are stored with your local reading data. They are
+            not included when Bookroom renders a shelf image for sharing and
+            are not included in CSV library exports.
+          </p>
+
+          <p>
+            Shelf Memories are included in a Full Backup because Full Backup is
+            designed to restore your Bookroom data completely.
+          </p>
+        </section>
+
+        <section>
+          <h2>7. Full Backup</h2>
+
+          <p>
+            Full Backup is initiated manually by you.
+          </p>
+
+          <p>
+            A Full Backup can contain your books, reading history, ratings,
+            Shelf Memories, shelf arrangement, room appearance, decoration
+            placement, captured spine images and a custom room-background
+            image.
+          </p>
+
+          <p>
+            Once the backup is created, Bookroom presents the iOS sharing
+            interface. You decide where the backup is saved or sent.
+          </p>
+
+          <p>
+            Because a Full Backup can contain private information and images,
+            you should store it somewhere you trust.
+          </p>
+        </section>
+
+        <section>
+          <h2>8. CSV import and export</h2>
+
+          <p>
+            CSV export is intended for library portability rather than complete
+            Bookroom restoration.
+          </p>
+
+          <p>
+            A CSV export may contain book information and reading information
+            such as title, author, ISBN, status, format, current page, page
+            count, publication year, genre, series information, cover URL,
+            reading dates and rating.
+          </p>
+
+          <p>
+            CSV exports do not contain Shelf Memories, captured spine images,
+            room-background images or the complete visual arrangement of your
+            shelf.
+          </p>
+
+          <p>
+            CSV imports are files that you explicitly select from your device
+            using the iOS file picker.
+          </p>
+        </section>
+
+        <section>
+          <h2>9. Sharing your shelf</h2>
+
+          <p>
+            Bookroom can render images of your shelf or reading collection for
+            you to share.
+          </p>
+
+          <p>
+            Sharing is initiated by you through the iOS sharing interface.
+            Bookroom does not automatically publish your shelf.
+          </p>
+
+          <p>
+            Private Shelf Memories are not included in generated shelf-sharing
+            images.
+          </p>
+
+          <p>
+            When you choose to share content with another app or service, that
+            destination may process the shared content according to its own
+            privacy practices.
+          </p>
+        </section>
+
+        <section>
+          <h2>10. Accounts, identity and tracking</h2>
+
+          <p>
+            Bookroom does not require a user account and does not ask you to
+            provide a name, email address, gender, age or other profile
+            information in order to use the app.
+          </p>
+
+          <p>
+            The current version contains no advertising SDK, behavioural
+            tracking SDK or cross-app tracking system.
+          </p>
+
+          <p>
+            Bookroom does not link your reading data to a Bookroom user
+            identity because no Bookroom account system exists.
+          </p>
+        </section>
+
+        <section>
+          <h2>11. Analytics and crash reporting</h2>
+
+          <p>
+            The current version of Bookroom does not include a third-party
+            analytics or crash-reporting service.
+          </p>
+
+          <p>
+            If this changes in a future version, this Privacy Policy will be
+            updated before such data collection is introduced.
+          </p>
+        </section>
+
+        <section>
+          <h2>12. Support correspondence</h2>
+
+          <p>
+            If you contact support by email, the email address you contact us
+            from and any information you choose to include in your message will
+            be received so that the support request can be answered.
+          </p>
+
+          <p>
+            Bookroom does not automatically send your library, Shelf Memories
+            or photographs when you contact support.
+          </p>
+        </section>
+
+        <section>
+          <h2>13. Changes to this policy</h2>
+
+          <p>
+            This policy may be updated when Bookroom gains new features,
+            services or data-handling behaviour.
+          </p>
+
+          <p>
+            The date at the top of this page will be changed when the policy is
+            materially updated.
+          </p>
+        </section>
+
+        <section>
+          <h2>14. Contact</h2>
+
+          <p>
+            Questions about privacy or Bookroom's handling of information can
+            be sent to:
+          </p>
+
+          <p>
+            <a class="contact-link" href={`mailto:${site.supportEmail}`}>
+              {site.supportEmail}
+            </a>
+          </p>
+        </section>
+      </article>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .page-hero {
+    padding: 190px 0 110px;
+    background: var(--color-forest-950);
+    color: var(--color-text-light);
+  }
+
+  .hero-inner {
+    max-width: 850px;
+  }
+
+  .page-hero .eyebrow {
+    color: var(--color-brass);
+  }
+
+  .page-hero h1 {
+    margin: 0;
+    font-family: var(--font-display);
+    font-size: clamp(3.5rem, 7vw, 6rem);
+    font-weight: 400;
+    letter-spacing: -0.045em;
+    line-height: 1;
+  }
+
+  .page-hero p:not(.eyebrow) {
+    max-width: 650px;
+    margin: 2rem 0 0;
+    color: var(--color-text-muted);
+    font-size: 1.1rem;
+  }
+
+  .updated {
+    display: block;
+    margin-top: 2rem;
+    color: rgb(200 192 177 / 65%);
+    font-size: 0.75rem;
+    letter-spacing: 0.04em;
+  }
+
+  .policy {
+    padding: var(--section-space) 0;
+    background: var(--color-cream-50);
+  }
+
+  .policy-layout {
+    display: grid;
+    grid-template-columns: minmax(210px, 0.55fr) minmax(0, 1.45fr);
+    gap: clamp(4rem, 10vw, 9rem);
+  }
+
+  aside {
+    align-self: start;
+    position: sticky;
+    top: 2rem;
+  }
+
+  .summary {
+    border-top: 1px solid var(--color-cream-200);
+  }
+
+  .summary > div {
+    padding: 1.25rem 0;
+    border-bottom: 1px solid var(--color-cream-200);
+  }
+
+  .summary strong {
+    display: block;
+    font-family: var(--font-display);
+    font-size: 1.15rem;
+    font-weight: 400;
+  }
+
+  .summary span {
+    display: block;
+    margin-top: 0.4rem;
+    color: var(--color-text-dark-muted);
+    font-size: 0.85rem;
+    line-height: 1.55;
+  }
+
+  .policy-content {
+    max-width: 750px;
+  }
+
+  .policy-content section + section {
+    margin-top: 4rem;
+    padding-top: 4rem;
+    border-top: 1px solid var(--color-cream-200);
+  }
+
+  .policy-content h2 {
+    margin: 0 0 1.25rem;
+    font-family: var(--font-display);
+    font-size: clamp(1.8rem, 3vw, 2.4rem);
+    font-weight: 400;
+    letter-spacing: -0.02em;
+  }
+
+  .policy-content p,
+  .policy-content li {
+    color: var(--color-text-dark-muted);
+  }
+
+  .policy-content p {
+    margin: 0;
+  }
+
+  .policy-content p + p {
+    margin-top: 1.2rem;
+  }
+
+  .policy-content ul {
+    margin: 1.5rem 0;
+    padding-left: 1.25rem;
+  }
+
+  .policy-content li + li {
+    margin-top: 0.45rem;
+  }
+
+  .policy-content a {
+    color: var(--color-burgundy);
+    text-underline-offset: 0.18em;
+  }
+
+  .contact-link {
+    font-family: var(--font-display);
+    font-size: 1.3rem;
+  }
+
+  @media (max-width: 760px) {
+    .page-hero {
+      padding: 145px 0 80px;
+    }
+
+    .policy-layout {
+      grid-template-columns: 1fr;
+      gap: 4rem;
+    }
+
+    aside {
+      position: static;
+    }
+
+    .policy-content section + section {
+      margin-top: 3rem;
+      padding-top: 3rem;
+    }
+  }
+</style>

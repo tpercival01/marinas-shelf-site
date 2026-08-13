@@ -1,0 +1,301 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { site } from "../config/site";
+
+const steps = [
+  {
+    number: "01",
+    title: "Add a book",
+    text: "Search the catalogue, scan an ISBN or add a book manually. Choose whether it belongs in To Read, Currently Reading or Finished.",
+  },
+  {
+    number: "02",
+    title: "Give it a place",
+    text: "Your book appears physically on your bookcase. Move it along the shelf, arrange it beside other books or build horizontal stacks.",
+  },
+  {
+    number: "03",
+    title: "Make the room yours",
+    text: "Change the wall, shelf and lighting, then decorate your bookcase with objects you choose and decorations you unlock.",
+  },
+  {
+    number: "04",
+    title: "Track the read",
+    text: "Record your progress, reading dates and the details that matter while a book moves through your reading life.",
+  },
+  {
+    number: "05",
+    title: "Remember it",
+    text: "Finish a book, rate it and preserve its reading history. Private Shelf Memories give you somewhere to keep the parts of a read that are only for you.",
+  },
+  {
+    number: "06",
+    title: "Build it over time",
+    text: "Rereads create new reading records, statistics grow and your shelf gradually becomes a visual history of what you have read.",
+  },
+];
+---
+
+<BaseLayout
+  title="How It Works"
+  description={`See how ${site.name} turns reading tracking into a personal illustrated bookcase.`}
+>
+  <section class="page-hero">
+    <div class="container hero-inner">
+      <p class="eyebrow">How it works</p>
+
+      <h1>
+        A reading tracker<br />
+        with somewhere to live.
+      </h1>
+
+      <p>
+        Add books, arrange them physically on your shelves and build a reading
+        room that becomes more personal the longer you use it.
+      </p>
+    </div>
+  </section>
+
+  <section class="steps-section">
+    <div class="container">
+      <div class="section-intro">
+        <p class="eyebrow">From first page to finished shelf</p>
+        <h2 class="section-title">
+          Your reading life,<br />
+          one shelf at a time.
+        </h2>
+      </div>
+
+      <div class="steps">
+        {steps.map((step) => (
+          <article class="step">
+            <span class="step-number">{step.number}</span>
+
+            <div>
+              <h3>{step.title}</h3>
+              <p>{step.text}</p>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="shelf-section">
+    <div class="container shelf-grid">
+      <div class="shelf-copy">
+        <p class="eyebrow">The shelf is the point</p>
+
+        <h2 class="section-title">
+          Not another library database.
+        </h2>
+
+        <p>
+          The bookcase is not decoration placed around the tracker. It is the
+          tracker. Your books occupy real positions, your decorations share
+          their space and the room changes with you.
+        </p>
+
+        <p>
+          The result is something you can return to not just to record what
+          happened, but to see what your reading life has become.
+        </p>
+      </div>
+
+      <div class="screenshot-frame">
+        <img
+          src="/images/hero-image.jpeg"
+          alt={`${site.name} showing books arranged on a wooden bookcase with reading stacks and decorations`}
+        />
+      </div>
+    </div>
+  </section>
+
+  <section class="closing">
+    <div class="container closing-inner">
+      <p class="eyebrow">Your personal reading room</p>
+
+      <h2>
+        The more you read,<br />
+        the more it becomes yours.
+      </h2>
+
+      <a href="/">Return to {site.name}</a>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .page-hero {
+    padding: 190px 0 110px;
+    background: var(--color-forest-950);
+    color: var(--color-text-light);
+  }
+
+  .hero-inner {
+    max-width: 850px;
+  }
+
+  .page-hero .eyebrow {
+    color: var(--color-brass);
+  }
+
+  .page-hero h1 {
+    margin: 0;
+    font-family: var(--font-display);
+    font-size: clamp(3.5rem, 7vw, 6rem);
+    font-weight: 400;
+    letter-spacing: -0.045em;
+    line-height: 1;
+  }
+
+  .page-hero p:last-child {
+    max-width: 620px;
+    margin: 2rem 0 0;
+    color: var(--color-text-muted);
+    font-size: 1.1rem;
+  }
+
+  .steps-section {
+    padding: var(--section-space) 0;
+    background: var(--color-cream-50);
+  }
+
+  .section-intro {
+    max-width: 720px;
+    margin-bottom: 5rem;
+  }
+
+  .steps {
+    border-top: 1px solid var(--color-cream-200);
+  }
+
+  .step {
+    display: grid;
+    grid-template-columns: 90px minmax(0, 1fr);
+    gap: 2rem;
+    padding: 2.5rem 0;
+    border-bottom: 1px solid var(--color-cream-200);
+  }
+
+  .step-number {
+    padding-top: 0.35rem;
+    color: var(--color-burgundy);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+  }
+
+  .step h3 {
+    margin: 0;
+    font-family: var(--font-display);
+    font-size: clamp(1.6rem, 3vw, 2.2rem);
+    font-weight: 400;
+  }
+
+  .step p {
+    max-width: 690px;
+    margin: 0.8rem 0 0;
+    color: var(--color-text-dark-muted);
+  }
+
+  .shelf-section {
+    padding: var(--section-space) 0;
+    background: var(--color-cream-100);
+  }
+
+  .shelf-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 300px;
+    align-items: center;
+    gap: clamp(4rem, 10vw, 9rem);
+  }
+
+  .shelf-copy {
+    max-width: 590px;
+  }
+
+  .shelf-copy > p:not(.eyebrow) {
+    color: var(--color-text-dark-muted);
+    font-size: 1.05rem;
+  }
+
+  .shelf-copy > p:nth-of-type(2) {
+    margin-top: 2rem;
+  }
+
+  .screenshot-frame {
+    width: 300px;
+    padding: 7px;
+    overflow: hidden;
+    background: #090b09;
+    border: 1px solid rgb(0 0 0 / 10%);
+    border-radius: 38px;
+    box-shadow: 0 30px 70px rgb(43 28 22 / 18%);
+  }
+
+  .screenshot-frame img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 32px;
+  }
+
+  .closing {
+    padding: var(--section-space) 0;
+    background: var(--color-walnut-900);
+    color: var(--color-text-light);
+    text-align: center;
+  }
+
+  .closing .eyebrow {
+    color: var(--color-brass);
+  }
+
+  .closing h2 {
+    margin: 0;
+    font-family: var(--font-display);
+    font-size: clamp(2.8rem, 6vw, 5rem);
+    font-weight: 400;
+    letter-spacing: -0.04em;
+    line-height: 1.05;
+  }
+
+  .closing a {
+    display: inline-block;
+    margin-top: 2.5rem;
+    color: var(--color-text-muted);
+    font-size: 0.9rem;
+    text-decoration: none;
+  }
+
+  .closing a:hover,
+  .closing a:focus-visible {
+    color: var(--color-text-light);
+  }
+
+  @media (max-width: 700px) {
+    .page-hero {
+      padding: 145px 0 80px;
+    }
+
+    .section-intro {
+      margin-bottom: 3rem;
+    }
+
+    .step {
+      grid-template-columns: 48px minmax(0, 1fr);
+      gap: 1rem;
+    }
+
+    .shelf-grid {
+      grid-template-columns: 1fr;
+      gap: 3rem;
+    }
+
+    .screenshot-frame {
+      width: min(290px, 78vw);
+      margin-inline: auto;
+    }
+  }
+</style>

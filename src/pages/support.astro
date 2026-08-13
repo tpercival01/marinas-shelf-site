@@ -1,0 +1,384 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { site } from "../config/site";
+
+const faqs = [
+  {
+    question: "How do I back up my library?",
+    answer:
+      "Use the backup tools inside Bookroom to create a full backup of your library and reading data. Keep that backup somewhere you control so it can be restored later if needed.",
+  },
+  {
+    question: "What is the difference between a backup and CSV export?",
+    answer:
+      "A full backup is intended for restoring Bookroom itself, including supported app-specific data. CSV export is intended for portable library data that can be opened or edited outside the app. A CSV should not be treated as a complete replacement for a full Bookroom backup.",
+  },
+  {
+    question: "Why can't Bookroom find a book?",
+    answer:
+      "Book search depends on external catalogue data, so some editions, older books or unusual publications may not appear immediately. You can add a book manually when catalogue data is unavailable.",
+  },
+  {
+    question: "Why isn't an ISBN scanning correctly?",
+    answer:
+      "Make sure the barcode is well lit, fully visible and reasonably flat in the camera view. Damaged, reflective or uncommon barcodes may not scan reliably. You can also search for the ISBN or add the book manually.",
+  },
+  {
+    question: "What is physical spine scanning?",
+    answer:
+      "Spine scanning is designed to help identify books from the physical books in front of you. Results can depend on lighting, spine visibility, typography and image quality, so you should confirm detected book information before adding it to your library.",
+  },
+  {
+    question: "Are Shelf Memories included when I share my shelf?",
+    answer:
+      "No. Shelf Memories are private notes and are not included in rendered shelf-sharing images.",
+  },
+];
+
+const troubleshooting = [
+  {
+    title: "Book search",
+    text: "Try the title and author together, search by ISBN where available, or add the book manually if the catalogue does not contain the edition you need.",
+  },
+  {
+    title: "ISBN scanner",
+    text: "Use even lighting, keep the entire barcode in frame and avoid glare. If scanning still fails, enter or search the ISBN manually.",
+  },
+  {
+    title: "Shelf arrangement",
+    text: "If a book is not where you expect, check the library state it belongs to and then rearrange it from the relevant shelf.",
+  },
+  {
+    title: "Restoring data",
+    text: "Use a Bookroom backup for restoration. CSV files are intended for library data portability and should not be assumed to contain every piece of app-specific information.",
+  },
+];
+---
+
+<BaseLayout
+  title="Support"
+  description={`Help, troubleshooting and support for ${site.name}.`}
+>
+  <section class="page-hero">
+    <div class="container hero-inner">
+      <p class="eyebrow">Support</p>
+
+      <h1>Help with your reading room.</h1>
+
+      <p>
+        Find answers to common questions, troubleshoot book importing and
+        scanning, or contact support directly.
+      </p>
+    </div>
+  </section>
+
+  <section class="quick-help">
+    <div class="container">
+      <div class="section-heading">
+        <p class="eyebrow">Start here</p>
+        <h2 class="section-title">Common fixes.</h2>
+      </div>
+
+      <div class="help-grid">
+        {troubleshooting.map((item) => (
+          <article>
+            <h3>{item.title}</h3>
+            <p>{item.text}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="faq-section">
+    <div class="container faq-layout">
+      <div class="faq-heading">
+        <p class="eyebrow">Questions</p>
+        <h2 class="section-title">Frequently asked.</h2>
+
+        <p class="faq-intro">
+          Bookroom is designed to keep ordinary library management simple.
+          These answers cover the areas most likely to need clarification.
+        </p>
+      </div>
+
+      <div class="faq-list">
+        {faqs.map((faq) => (
+          <details>
+            <summary>{faq.question}</summary>
+            <p>{faq.answer}</p>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="privacy-note">
+    <div class="container privacy-grid">
+      <div>
+        <p class="eyebrow">Privacy</p>
+        <h2 class="section-title">Your private notes stay out of shared shelves.</h2>
+      </div>
+
+      <div>
+        <p>
+          Shelf Memories are private and are not included when Bookroom renders
+          an image of your shelf for sharing.
+        </p>
+
+        <p>
+          Bookroom is being built around a local-first approach. Some features,
+          such as book catalogue searches or remotely supplied cover artwork,
+          may require network requests. Full details will be documented in the
+          Privacy Policy before launch.
+        </p>
+
+        <a href="/privacy">Read the Privacy Policy →</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact">
+    <div class="container contact-inner">
+      <p class="eyebrow">Still stuck?</p>
+
+      <h2>Contact support.</h2>
+
+      <p>
+        Include a short description of what happened, what you expected to
+        happen and, if useful, your iPhone model and iOS version.
+      </p>
+
+      <a href={`mailto:${site.supportEmail}`}>{site.supportEmail}</a>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .page-hero {
+    padding: 190px 0 110px;
+    background: var(--color-forest-950);
+    color: var(--color-text-light);
+  }
+
+  .hero-inner {
+    max-width: 790px;
+  }
+
+  .page-hero .eyebrow {
+    color: var(--color-brass);
+  }
+
+  .page-hero h1 {
+    margin: 0;
+    font-family: var(--font-display);
+    font-size: clamp(3.5rem, 7vw, 6rem);
+    font-weight: 400;
+    letter-spacing: -0.045em;
+    line-height: 1;
+  }
+
+  .page-hero p:last-child {
+    max-width: 610px;
+    margin: 2rem 0 0;
+    color: var(--color-text-muted);
+    font-size: 1.1rem;
+  }
+
+  .quick-help {
+    padding: var(--section-space) 0;
+    background: var(--color-cream-50);
+  }
+
+  .section-heading {
+    margin-bottom: 4rem;
+  }
+
+  .help-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    border-top: 1px solid var(--color-cream-200);
+    border-left: 1px solid var(--color-cream-200);
+  }
+
+  .help-grid article {
+    padding: 2.5rem;
+    border-right: 1px solid var(--color-cream-200);
+    border-bottom: 1px solid var(--color-cream-200);
+  }
+
+  .help-grid h3 {
+    margin: 0;
+    font-family: var(--font-display);
+    font-size: 1.7rem;
+    font-weight: 400;
+  }
+
+  .help-grid p {
+    margin: 1rem 0 0;
+    color: var(--color-text-dark-muted);
+  }
+
+  .faq-section {
+    padding: var(--section-space) 0;
+    background: var(--color-cream-100);
+  }
+
+  .faq-layout {
+    display: grid;
+    grid-template-columns: minmax(260px, 0.75fr) minmax(0, 1.25fr);
+    gap: clamp(4rem, 10vw, 9rem);
+  }
+
+  .faq-heading {
+    align-self: start;
+  }
+
+  .faq-intro {
+    max-width: 420px;
+    margin-top: 2rem;
+    color: var(--color-text-dark-muted);
+  }
+
+  .faq-list {
+    border-top: 1px solid var(--color-cream-200);
+  }
+
+  details {
+    border-bottom: 1px solid var(--color-cream-200);
+  }
+
+  summary {
+    position: relative;
+    padding: 1.6rem 2.5rem 1.6rem 0;
+    cursor: pointer;
+    font-family: var(--font-display);
+    font-size: 1.35rem;
+    list-style: none;
+  }
+
+  summary::-webkit-details-marker {
+    display: none;
+  }
+
+  summary::after {
+    position: absolute;
+    top: 1.55rem;
+    right: 0;
+    content: "+";
+    color: var(--color-burgundy);
+    font-family: var(--font-body);
+    font-size: 1.35rem;
+  }
+
+  details[open] summary::after {
+    content: "−";
+  }
+
+  details p {
+    max-width: 650px;
+    margin: -0.25rem 0 1.75rem;
+    color: var(--color-text-dark-muted);
+  }
+
+  .privacy-note {
+    padding: var(--section-space) 0;
+    background: var(--color-forest-800);
+    color: var(--color-text-light);
+  }
+
+  .privacy-note .eyebrow {
+    color: var(--color-brass);
+  }
+
+  .privacy-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(280px, 0.8fr);
+    gap: clamp(3rem, 10vw, 9rem);
+  }
+
+  .privacy-grid > div:last-child {
+    padding-top: 2.25rem;
+    color: var(--color-text-muted);
+  }
+
+  .privacy-grid > div:last-child p {
+    margin-top: 0;
+  }
+
+  .privacy-grid > div:last-child p + p {
+    margin-top: 1.5rem;
+  }
+
+  .privacy-grid a {
+    display: inline-block;
+    margin-top: 1rem;
+    color: var(--color-text-light);
+    font-size: 0.9rem;
+    text-decoration: none;
+  }
+
+  .contact {
+    padding: var(--section-space) 0;
+    background: var(--color-walnut-900);
+    color: var(--color-text-light);
+    text-align: center;
+  }
+
+  .contact-inner {
+    max-width: 720px;
+  }
+
+  .contact .eyebrow {
+    color: var(--color-brass);
+  }
+
+  .contact h2 {
+    margin: 0;
+    font-family: var(--font-display);
+    font-size: clamp(3rem, 6vw, 5rem);
+    font-weight: 400;
+    letter-spacing: -0.04em;
+  }
+
+  .contact p:not(.eyebrow) {
+    max-width: 570px;
+    margin: 1.75rem auto;
+    color: var(--color-text-muted);
+  }
+
+  .contact a {
+    color: var(--color-text-light);
+    font-family: var(--font-display);
+    font-size: clamp(1.25rem, 3vw, 1.8rem);
+    text-decoration: none;
+  }
+
+  @media (max-width: 700px) {
+    .page-hero {
+      padding: 145px 0 80px;
+    }
+
+    .help-grid,
+    .faq-layout,
+    .privacy-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .help-grid article {
+      padding: 2rem;
+    }
+
+    .faq-layout {
+      gap: 3rem;
+    }
+
+    .privacy-grid {
+      gap: 2rem;
+    }
+
+    .privacy-grid > div:last-child {
+      padding-top: 0;
+    }
+  }
+</style>

@@ -1,17 +1,265 @@
 ---
 
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { site } from "../config/site";
+
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<BaseLayout>
+  <section class="hero">
+    <div class="container hero-grid">
+      <div class="hero-copy">
+        <p class="eyebrow hero-eyebrow">A reading tracker for iPhone</p>
+
+        <h1>{site.name}</h1>
+
+		<p class="subtitle">{site.tagline}</p>
+
+        <p class="intro">
+          Track what you read on a bookcase that becomes more personal
+          with every book, memory and milestone.
+        </p>
+
+        <div class="hero-actions">
+          <span class="app-store-placeholder">
+            Coming to the App Store
+          </span>
+
+          <a href="#your-books-belong-somewhere">
+            Discover {site.name} ↓
+          </a>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="phone-frame">
+          <img
+            src="/images/hero-image.jpeg"
+            alt="Bookroom showing a personal wooden bookcase filled with books and decorations"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section
+    class="proposition"
+    id="your-books-belong-somewhere"
+  >
+    <div class="container proposition-grid">
+      <div>
+        <p class="eyebrow">More than a list</p>
+
+        <h2 class="section-title">
+          Your books belong somewhere.
+        </h2>
+      </div>
+
+      <div class="proposition-copy">
+        <p class="lead">
+          Most reading trackers turn your library into rows of data.
+			{site.name} gives it a place to live.
+        </p>
+
+        <p>
+          Every book you add becomes part of your own illustrated bookcase.
+          Arrange your shelves, stack favourites, add decorations and shape
+          a reading room that changes as your reading life does.
+        </p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .hero {
+    background: #101713;
+    color: #f5efe3;
+  }
+
+  .hero-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 290px;
+    gap: 90px;
+    align-items: center;
+    min-height: 780px;
+    padding-top: 120px;
+    padding-bottom: 70px;
+  }
+
+  .hero-copy {
+    max-width: 650px;
+  }
+
+  .hero-eyebrow {
+    color: #b79a62;
+  }
+
+  h1 {
+    margin: 0;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 104px;
+    font-weight: 400;
+    line-height: 0.9;
+    letter-spacing: -5px;
+  }
+
+  .subtitle {
+    margin: 24px 0 0;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 42px;
+    line-height: 1.1;
+  }
+
+  .intro {
+    max-width: 540px;
+    margin: 28px 0 0;
+    color: #c8c0b1;
+    font-size: 17px;
+    line-height: 1.7;
+  }
+
+  .hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 24px;
+    margin-top: 34px;
+  }
+
+  .app-store-placeholder {
+    display: inline-flex;
+    align-items: center;
+    min-height: 50px;
+    padding: 0 20px;
+    border: 1px solid rgba(245, 239, 227, 0.2);
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+  }
+
+  .hero-actions a {
+    color: #c8c0b1;
+    font-size: 14px;
+    text-decoration: none;
+  }
+
+  .hero-actions a:hover,
+  .hero-actions a:focus-visible {
+    color: #f5efe3;
+  }
+
+  .hero-visual {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .phone-frame {
+    width: 290px;
+    padding: 7px;
+    background: #090b09;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 38px;
+    box-shadow: 0 36px 80px rgba(0, 0, 0, 0.4);
+  }
+
+  .phone-frame img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 32px;
+  }
+
+  .proposition {
+    padding: 120px 0;
+    background: #faf7ef;
+  }
+
+  .proposition-grid {
+    display: grid;
+    grid-template-columns: 1fr 0.8fr;
+    gap: 100px;
+  }
+
+  .proposition-copy {
+    padding-top: 34px;
+    color: #655f54;
+    font-size: 17px;
+  }
+
+  .proposition-copy p {
+    margin-top: 0;
+  }
+
+  .proposition-copy p + p {
+    margin-top: 24px;
+  }
+
+  .proposition-copy .lead {
+    color: #211f1a;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 24px;
+    line-height: 1.5;
+  }
+
+  @media (max-width: 900px) {
+    .hero-grid {
+      grid-template-columns: minmax(0, 1fr) 245px;
+      gap: 50px;
+    }
+
+    .phone-frame {
+      width: 245px;
+    }
+
+    h1 {
+      font-size: 80px;
+      letter-spacing: -4px;
+    }
+
+    .subtitle {
+      font-size: 34px;
+    }
+  }
+
+  @media (max-width: 700px) {
+    .hero-grid {
+      grid-template-columns: 1fr;
+      gap: 50px;
+      min-height: auto;
+      padding-top: 130px;
+      padding-bottom: 70px;
+    }
+
+    h1 {
+      font-size: clamp(64px, 20vw, 90px);
+    }
+
+    .subtitle {
+      font-size: 32px;
+    }
+
+    .hero-visual {
+      justify-content: center;
+    }
+
+    .phone-frame {
+      width: min(290px, 78vw);
+    }
+
+    .proposition {
+      padding: 80px 0;
+    }
+
+    .proposition-grid {
+      grid-template-columns: 1fr;
+      gap: 28px;
+    }
+
+    .proposition-copy {
+      padding-top: 0;
+    }
+  }
+</style>
