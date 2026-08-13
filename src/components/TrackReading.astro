@@ -1,0 +1,309 @@
+<section class="tracking">
+  <div class="container tracking-grid">
+    <div class="tracking-visual">
+      <div class="screen-placeholder" aria-label="Progress screen placeholder">
+        <div class="placeholder-top">
+          <span>Progress</span>
+          <small>Final app screenshot pending</small>
+        </div>
+
+        <div class="placeholder-stat">
+          <strong>61</strong>
+          <span>books finished</span>
+        </div>
+
+        <div class="placeholder-metrics">
+          <div>
+            <strong>26,429</strong>
+            <span>pages</span>
+          </div>
+
+          <div>
+            <strong>45</strong>
+            <span>this year</span>
+          </div>
+
+          <div>
+            <strong>3.8</strong>
+            <span>per month</span>
+          </div>
+        </div>
+
+        <div class="placeholder-chart">
+          <span style="height: 32%"></span>
+          <span style="height: 18%"></span>
+          <span style="height: 24%"></span>
+          <span style="height: 42%"></span>
+          <span style="height: 20%"></span>
+          <span style="height: 15%"></span>
+          <span style="height: 22%"></span>
+          <span style="height: 70%"></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="tracking-copy">
+      <p class="eyebrow">Track your reading</p>
+
+      <h2 class="section-title">
+        See the reading life<br />
+        behind the shelf.
+      </h2>
+
+      <p class="lead">
+        The bookcase gives your library somewhere to live. Your reading history
+        tells you how it got there.
+      </p>
+
+      <p>
+        Follow finished books, pages read, reading pace and progress over time
+        without turning reading into a spreadsheet.
+      </p>
+
+      <div class="tracking-details">
+        <article>
+          <span>01</span>
+
+          <div>
+            <h3>Keep your place</h3>
+            <p>
+              Record progress while you read and keep start and finish dates
+              attached to each reading.
+            </p>
+          </div>
+        </article>
+
+        <article>
+          <span>02</span>
+
+          <div>
+            <h3>Look back</h3>
+            <p>
+              Finished books become part of a growing reading history rather
+              than disappearing into an archive.
+            </p>
+          </div>
+        </article>
+
+        <article>
+          <span>03</span>
+
+          <div>
+            <h3>Read again</h3>
+            <p>
+              Rereading creates another reading record, preserving each journey
+              through the same book.
+            </p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .tracking {
+    padding: 120px 0;
+    background: var(--color-forest-800);
+    color: var(--color-text-light);
+  }
+
+  .tracking-grid {
+    display: grid;
+    grid-template-columns: 380px minmax(0, 1fr);
+    gap: clamp(70px, 10vw, 140px);
+    align-items: center;
+  }
+
+  .tracking-visual {
+    display: flex;
+    justify-content: center;
+  }
+
+  .screen-placeholder {
+    width: 360px;
+    min-height: 620px;
+    padding: 34px 28px;
+    border: 1px solid rgb(245 239 227 / 12%);
+    border-radius: 36px;
+    background: var(--color-cream-50);
+    color: var(--color-text-dark);
+    box-shadow: 0 38px 80px rgb(0 0 0 / 24%);
+  }
+
+  .placeholder-top {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    align-items: baseline;
+    padding-bottom: 22px;
+    border-bottom: 1px solid var(--color-cream-200);
+  }
+
+  .placeholder-top span {
+    font-family: var(--font-display);
+    font-size: 24px;
+  }
+
+  .placeholder-top small {
+    max-width: 130px;
+    color: var(--color-text-dark-muted);
+    font-size: 10px;
+    line-height: 1.4;
+    text-align: right;
+  }
+
+  .placeholder-stat {
+    padding: 50px 0 32px;
+  }
+
+  .placeholder-stat strong {
+    display: block;
+    font-family: var(--font-display);
+    font-size: 78px;
+    font-weight: 400;
+    line-height: 0.9;
+  }
+
+  .placeholder-stat span {
+    display: block;
+    margin-top: 12px;
+    color: var(--color-text-dark-muted);
+    font-family: var(--font-display);
+    font-size: 25px;
+  }
+
+  .placeholder-metrics {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 24px 0;
+    border-top: 1px solid var(--color-cream-200);
+    border-bottom: 1px solid var(--color-cream-200);
+  }
+
+  .placeholder-metrics div {
+    padding-right: 10px;
+  }
+
+  .placeholder-metrics div + div {
+    padding-left: 14px;
+    border-left: 1px solid var(--color-cream-200);
+  }
+
+  .placeholder-metrics strong {
+    display: block;
+    font-size: 17px;
+  }
+
+  .placeholder-metrics span {
+    display: block;
+    margin-top: 3px;
+    color: var(--color-text-dark-muted);
+    font-size: 10px;
+  }
+
+  .placeholder-chart {
+    display: flex;
+    height: 190px;
+    gap: 11px;
+    align-items: flex-end;
+    margin-top: 48px;
+    padding: 0 8px 24px;
+    border-bottom: 1px solid var(--color-cream-200);
+  }
+
+  .placeholder-chart span {
+    flex: 1;
+    min-height: 8px;
+    background: var(--color-forest-700);
+    border-radius: 3px 3px 0 0;
+  }
+
+  .tracking-copy {
+    max-width: 650px;
+  }
+
+  .tracking-copy .eyebrow {
+    color: var(--color-brass);
+  }
+
+  .tracking-copy .lead {
+    margin: 32px 0 0;
+    color: var(--color-text-light);
+    font-family: var(--font-display);
+    font-size: 24px;
+    line-height: 1.5;
+  }
+
+  .tracking-copy > p:not(.eyebrow):not(.lead) {
+    max-width: 550px;
+    margin: 20px 0 0;
+    color: var(--color-text-muted);
+    font-size: 17px;
+  }
+
+  .tracking-details {
+    margin-top: 50px;
+    border-top: 1px solid rgb(245 239 227 / 12%);
+  }
+
+  .tracking-details article {
+    display: grid;
+    grid-template-columns: 50px 1fr;
+    gap: 18px;
+    padding: 22px 0;
+    border-bottom: 1px solid rgb(245 239 227 / 12%);
+  }
+
+  .tracking-details article > span {
+    padding-top: 4px;
+    color: var(--color-brass);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+  }
+
+  .tracking-details h3 {
+    margin: 0;
+    font-family: var(--font-display);
+    font-size: 23px;
+    font-weight: 400;
+  }
+
+  .tracking-details p {
+    margin: 7px 0 0;
+    color: var(--color-text-muted);
+    font-size: 14px;
+  }
+
+  @media (max-width: 800px) {
+    .tracking-grid {
+      grid-template-columns: 320px minmax(0, 1fr);
+      gap: 50px;
+    }
+
+    .screen-placeholder {
+      width: 310px;
+      min-height: 560px;
+    }
+  }
+
+  @media (max-width: 700px) {
+    .tracking {
+      padding: 80px 0;
+    }
+
+    .tracking-grid {
+      grid-template-columns: 1fr;
+      gap: 55px;
+    }
+
+    .tracking-copy {
+      order: -1;
+    }
+
+    .screen-placeholder {
+      width: min(340px, 88vw);
+    }
+  }
+</style>

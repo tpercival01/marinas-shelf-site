@@ -1,0 +1,382 @@
+<section class="sharing">
+  <div class="container sharing-grid">
+    <div class="sharing-copy">
+      <p class="eyebrow">Share your shelf</p>
+
+      <h2 class="section-title">
+        Share the room,<br />
+        not the database.
+      </h2>
+
+      <p class="lead">
+        When you want to share your reading life, Bookroom renders the shelf
+        itself.
+      </p>
+
+      <p>
+        Create a polished image of your bookcase to share with friends or post
+        elsewhere without exposing the private notes behind it.
+      </p>
+
+      <div class="sharing-points">
+        <article>
+          <span>01</span>
+
+          <div>
+            <h3>Your shelf, rendered beautifully</h3>
+            <p>
+              Share an image that looks like the reading room you built rather
+              than a screenshot of a spreadsheet or list.
+            </p>
+          </div>
+        </article>
+
+        <article>
+          <span>02</span>
+
+          <div>
+            <h3>Private stays private</h3>
+            <p>
+              Shelf Memories are not included in generated shelf-sharing
+              images.
+            </p>
+          </div>
+        </article>
+
+        <article>
+          <span>03</span>
+
+          <div>
+            <h3>You decide where it goes</h3>
+            <p>
+              Sharing is initiated by you through the normal iOS sharing
+              interface.
+            </p>
+          </div>
+        </article>
+      </div>
+    </div>
+
+    <div class="sharing-visual" aria-label="Shared shelf image placeholder">
+      <div class="share-card">
+        <div class="share-header">
+          <span>My Bookroom</span>
+          <small>2026</small>
+        </div>
+
+        <div class="mini-room">
+          <div class="mini-shelf">
+            <div class="books">
+              <span class="book burgundy tall"></span>
+              <span class="book forest"></span>
+              <span class="book navy tall"></span>
+              <span class="book cream"></span>
+              <span class="book brown medium"></span>
+            </div>
+          </div>
+
+          <div class="mini-shelf">
+            <div class="stack">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+
+            <div class="books second">
+              <span class="book forest tall"></span>
+              <span class="book burgundy"></span>
+              <span class="book cream medium"></span>
+            </div>
+          </div>
+
+          <div class="mini-shelf">
+            <div class="books">
+              <span class="book navy"></span>
+              <span class="book brown tall"></span>
+              <span class="book burgundy medium"></span>
+              <span class="book cream"></span>
+            </div>
+
+            <div class="plant">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="share-footer">
+          <span>61 books finished</span>
+          <small>Your personal reading room</small>
+        </div>
+      </div>
+
+      <span class="placeholder-label">Final share render pending</span>
+    </div>
+  </div>
+</section>
+
+<style>
+  .sharing {
+    padding: 120px 0;
+    background: var(--color-cream-100);
+  }
+
+  .sharing-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 430px;
+    gap: clamp(70px, 10vw, 140px);
+    align-items: center;
+  }
+
+  .sharing-copy {
+    max-width: 640px;
+  }
+
+  .sharing-copy .lead {
+    margin: 32px 0 0;
+    color: var(--color-text-dark);
+    font-family: var(--font-display);
+    font-size: 24px;
+    line-height: 1.5;
+  }
+
+  .sharing-copy > p:not(.eyebrow):not(.lead) {
+    max-width: 550px;
+    margin: 20px 0 0;
+    color: var(--color-text-dark-muted);
+    font-size: 17px;
+  }
+
+  .sharing-points {
+    margin-top: 48px;
+    border-top: 1px solid var(--color-cream-200);
+  }
+
+  .sharing-points article {
+    display: grid;
+    grid-template-columns: 48px 1fr;
+    gap: 18px;
+    padding: 22px 0;
+    border-bottom: 1px solid var(--color-cream-200);
+  }
+
+  .sharing-points article > span {
+    padding-top: 4px;
+    color: var(--color-burgundy);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+  }
+
+  .sharing-points h3 {
+    margin: 0;
+    font-family: var(--font-display);
+    font-size: 22px;
+    font-weight: 400;
+  }
+
+  .sharing-points p {
+    margin: 6px 0 0;
+    color: var(--color-text-dark-muted);
+    font-size: 14px;
+  }
+
+  .sharing-visual {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .share-card {
+    width: 420px;
+    padding: 26px;
+    border: 1px solid var(--color-cream-200);
+    background: #f7f0e2;
+    box-shadow: 0 34px 75px rgb(43 28 22 / 16%);
+  }
+
+  .share-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding-bottom: 20px;
+  }
+
+  .share-header span {
+    font-family: var(--font-display);
+    font-size: 24px;
+  }
+
+  .share-header small {
+    color: var(--color-text-dark-muted);
+    font-size: 11px;
+  }
+
+  .mini-room {
+    padding: 18px 18px 0;
+    background: var(--color-walnut-800);
+    border: 1px solid rgb(43 28 22 / 22%);
+  }
+
+  .mini-shelf {
+    display: flex;
+    align-items: flex-end;
+    min-height: 120px;
+    padding: 12px 10px 0;
+    background: var(--color-forest-900);
+    border-bottom: 10px solid var(--color-walnut-700);
+  }
+
+  .mini-shelf + .mini-shelf {
+    margin-top: 8px;
+  }
+
+  .books {
+    display: flex;
+    align-items: flex-end;
+    gap: 4px;
+  }
+
+  .books.second {
+    margin-left: auto;
+  }
+
+  .book {
+    display: block;
+    width: 23px;
+    height: 68px;
+    border-radius: 2px 2px 0 0;
+  }
+
+  .book.tall {
+    height: 88px;
+  }
+
+  .book.medium {
+    height: 78px;
+  }
+
+  .burgundy {
+    background: #71383d;
+  }
+
+  .forest {
+    background: #435d4b;
+  }
+
+  .navy {
+    background: #394d5d;
+  }
+
+  .cream {
+    background: #c8b997;
+  }
+
+  .brown {
+    background: #795343;
+  }
+
+  .stack {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    width: 72px;
+  }
+
+  .stack span {
+    display: block;
+    height: 15px;
+    background: #71383d;
+  }
+
+  .stack span:nth-child(2) {
+    width: 88%;
+    background: #c8b997;
+  }
+
+  .stack span:nth-child(3) {
+    width: 95%;
+    background: #435d4b;
+  }
+
+  .plant {
+    display: flex;
+    gap: 3px;
+    align-items: flex-end;
+    margin-left: auto;
+    padding-bottom: 5px;
+  }
+
+  .plant span {
+    display: block;
+    width: 13px;
+    border-radius: 50% 50% 40% 40%;
+    background: #67785f;
+  }
+
+  .plant span:nth-child(1) {
+    height: 35px;
+    transform: rotate(-14deg);
+  }
+
+  .plant span:nth-child(2) {
+    height: 50px;
+  }
+
+  .plant span:nth-child(3) {
+    height: 31px;
+    transform: rotate(14deg);
+  }
+
+  .share-footer {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    align-items: baseline;
+    padding-top: 20px;
+  }
+
+  .share-footer span {
+    font-family: var(--font-display);
+    font-size: 18px;
+  }
+
+  .share-footer small {
+    color: var(--color-text-dark-muted);
+    font-size: 10px;
+    text-align: right;
+  }
+
+  .placeholder-label {
+    margin-top: 14px;
+    color: var(--color-text-dark-muted);
+    font-size: 10px;
+  }
+
+  @media (max-width: 850px) {
+    .sharing-grid {
+      grid-template-columns: minmax(0, 1fr) 350px;
+      gap: 55px;
+    }
+
+    .share-card {
+      width: 350px;
+    }
+  }
+
+  @media (max-width: 700px) {
+    .sharing {
+      padding: 80px 0;
+    }
+
+    .sharing-grid {
+      grid-template-columns: 1fr;
+      gap: 55px;
+    }
+
+    .share-card {
+      width: min(100%, 420px);
+    }
+  }
+</style>

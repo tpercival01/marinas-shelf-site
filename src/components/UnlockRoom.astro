@@ -1,0 +1,380 @@
+<section class="unlocks">
+  <div class="container unlocks-grid">
+    <div class="unlock-visual" aria-label="Achievement and decoration placeholder">
+      <div class="cabinet">
+        <div class="cabinet-heading">
+          <span>Reading achievements</span>
+          <small>Final app screenshot pending</small>
+        </div>
+
+        <div class="achievement featured">
+          <span class="mark">25</span>
+
+          <div>
+            <small>Milestone</small>
+            <strong>A Shelf Taking Shape</strong>
+            <p>Finish 25 books.</p>
+          </div>
+        </div>
+
+        <div class="reward">
+          <span>Unlocked</span>
+
+          <div class="reward-object">
+            <div class="lamp-shade"></div>
+            <div class="lamp-stem"></div>
+            <div class="lamp-base"></div>
+          </div>
+
+          <div>
+            <strong>Reading Lamp</strong>
+            <p>A new decoration for your room.</p>
+          </div>
+        </div>
+
+        <div class="achievement-row">
+          <div>
+            <span>10</span>
+            <small>Books</small>
+          </div>
+
+          <div>
+            <span>1k</span>
+            <small>Pages</small>
+          </div>
+
+          <div>
+            <span>7</span>
+            <small>Finished</small>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="unlock-copy">
+      <p class="eyebrow">Unlock your reading room</p>
+
+      <h2 class="section-title">
+        Let the room grow<br />
+        with your reading.
+      </h2>
+
+      <p class="lead">
+        Achievements should leave something behind.
+      </p>
+
+      <p>
+        Reading milestones can unlock new decorations for your shelf, giving
+        progress a physical place inside the room rather than reducing it to
+        another badge collection.
+      </p>
+
+      <div class="unlock-points">
+        <article>
+          <span>01</span>
+
+          <div>
+            <h3>Read</h3>
+            <p>
+              Build your history naturally by finishing books and reaching
+              reading milestones.
+            </p>
+          </div>
+        </article>
+
+        <article>
+          <span>02</span>
+
+          <div>
+            <h3>Unlock</h3>
+            <p>
+              Achievements reveal decorations and objects that can become part
+              of your shelf.
+            </p>
+          </div>
+        </article>
+
+        <article>
+          <span>03</span>
+
+          <div>
+            <h3>Keep it</h3>
+            <p>
+              The reward becomes part of the reading room itself, changing what
+              your shelf looks like over time.
+            </p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .unlocks {
+    padding: 120px 0;
+    background: var(--color-walnut-900);
+    color: var(--color-text-light);
+  }
+
+  .unlocks-grid {
+    display: grid;
+    grid-template-columns: 410px minmax(0, 1fr);
+    gap: clamp(70px, 10vw, 140px);
+    align-items: center;
+  }
+
+  .unlock-visual {
+    display: flex;
+    justify-content: center;
+  }
+
+  .cabinet {
+    width: 400px;
+    padding: 34px;
+    border: 1px solid rgb(183 154 98 / 20%);
+    background:
+      linear-gradient(
+        rgb(23 33 27 / 94%),
+        rgb(16 23 19 / 98%)
+      );
+    box-shadow: 0 38px 80px rgb(0 0 0 / 28%);
+  }
+
+  .cabinet-heading {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    align-items: baseline;
+    padding-bottom: 22px;
+    border-bottom: 1px solid rgb(245 239 227 / 12%);
+  }
+
+  .cabinet-heading span {
+    font-family: var(--font-display);
+    font-size: 21px;
+  }
+
+  .cabinet-heading small {
+    max-width: 120px;
+    color: var(--color-text-muted);
+    font-size: 9px;
+    line-height: 1.4;
+    text-align: right;
+  }
+
+  .achievement {
+    display: grid;
+    grid-template-columns: 70px 1fr;
+    gap: 20px;
+    margin-top: 30px;
+    padding: 24px;
+    border: 1px solid rgb(183 154 98 / 20%);
+    background: rgb(183 154 98 / 6%);
+  }
+
+  .mark {
+    display: grid;
+    width: 62px;
+    height: 62px;
+    place-items: center;
+    border: 1px solid var(--color-brass);
+    border-radius: 50%;
+    color: var(--color-brass);
+    font-family: var(--font-display);
+    font-size: 24px;
+  }
+
+  .achievement small,
+  .reward > span {
+    color: var(--color-brass);
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+  }
+
+  .achievement strong,
+  .reward strong {
+    display: block;
+    margin-top: 5px;
+    font-family: var(--font-display);
+    font-size: 20px;
+    font-weight: 400;
+  }
+
+  .achievement p,
+  .reward p {
+    margin: 5px 0 0;
+    color: var(--color-text-muted);
+    font-size: 12px;
+  }
+
+  .reward {
+    display: grid;
+    grid-template-columns: 76px 1fr;
+    gap: 20px;
+    position: relative;
+    margin-top: 18px;
+    padding: 50px 24px 24px;
+    border-bottom: 1px solid rgb(245 239 227 / 12%);
+  }
+
+  .reward > span {
+    position: absolute;
+    top: 18px;
+    left: 24px;
+  }
+
+  .reward-object {
+    position: relative;
+    width: 62px;
+    height: 88px;
+  }
+
+  .lamp-shade {
+    position: absolute;
+    top: 0;
+    left: 10px;
+    width: 42px;
+    height: 24px;
+    border-radius: 50% 50% 5px 5px;
+    background: #405747;
+    border: 2px solid #9d824f;
+  }
+
+  .lamp-stem {
+    position: absolute;
+    top: 23px;
+    left: 29px;
+    width: 5px;
+    height: 47px;
+    background: #9d824f;
+  }
+
+  .lamp-base {
+    position: absolute;
+    bottom: 8px;
+    left: 15px;
+    width: 34px;
+    height: 7px;
+    border-radius: 50%;
+    background: #9d824f;
+  }
+
+  .achievement-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin-top: 28px;
+  }
+
+  .achievement-row > div {
+    text-align: center;
+  }
+
+  .achievement-row > div + div {
+    border-left: 1px solid rgb(245 239 227 / 12%);
+  }
+
+  .achievement-row span {
+    display: block;
+    font-family: var(--font-display);
+    font-size: 24px;
+  }
+
+  .achievement-row small {
+    display: block;
+    margin-top: 3px;
+    color: var(--color-text-muted);
+    font-size: 9px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .unlock-copy {
+    max-width: 640px;
+  }
+
+  .unlock-copy .eyebrow {
+    color: var(--color-brass);
+  }
+
+  .unlock-copy .lead {
+    margin: 32px 0 0;
+    font-family: var(--font-display);
+    font-size: 25px;
+    line-height: 1.5;
+  }
+
+  .unlock-copy > p:not(.eyebrow):not(.lead) {
+    max-width: 550px;
+    margin: 20px 0 0;
+    color: var(--color-text-muted);
+    font-size: 17px;
+  }
+
+  .unlock-points {
+    margin-top: 48px;
+    border-top: 1px solid rgb(245 239 227 / 12%);
+  }
+
+  .unlock-points article {
+    display: grid;
+    grid-template-columns: 48px 1fr;
+    gap: 18px;
+    padding: 22px 0;
+    border-bottom: 1px solid rgb(245 239 227 / 12%);
+  }
+
+  .unlock-points article > span {
+    padding-top: 4px;
+    color: var(--color-brass);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+  }
+
+  .unlock-points h3 {
+    margin: 0;
+    font-family: var(--font-display);
+    font-size: 22px;
+    font-weight: 400;
+  }
+
+  .unlock-points p {
+    margin: 6px 0 0;
+    color: var(--color-text-muted);
+    font-size: 14px;
+  }
+
+  @media (max-width: 850px) {
+    .unlocks-grid {
+      grid-template-columns: 340px minmax(0, 1fr);
+      gap: 55px;
+    }
+
+    .cabinet {
+      width: 340px;
+      padding: 26px;
+    }
+  }
+
+  @media (max-width: 700px) {
+    .unlocks {
+      padding: 80px 0;
+    }
+
+    .unlocks-grid {
+      grid-template-columns: 1fr;
+      gap: 55px;
+    }
+
+    .unlock-copy {
+      order: -1;
+    }
+
+    .cabinet {
+      width: min(100%, 400px);
+    }
+  }
+</style>

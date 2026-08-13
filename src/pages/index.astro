@@ -1,7 +1,11 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import MoodLighting from "../components/MoodLighting.astro";
 import { site } from "../config/site";
+import TrackReading from "../components/TrackReading.astro";
+import RememberEveryRead from "../components/RememberEveryRead.astro";
+import UnlockRoom from "../components/UnlockRoom.astro";
+import ShareShelf from "../components/ShareShelf.astro";
+import FinalCTA from "../components/FinalCTA.astro";
 ---
 
 <BaseLayout>
@@ -68,7 +72,6 @@ import { site } from "../config/site";
       </div>
     </div>
   </section>
-  <MoodLighting />
   <section class="customisation">
   <div class="container customisation-intro">
     <div>
@@ -94,34 +97,66 @@ import { site } from "../config/site";
   </div>
 
   <div class="container comparison">
-    <figure>
-      <div class="shelf-preview">
-        <img
-          src="/images/hero-image.jpeg"
-          alt="Bookroom shelf shown in bright daytime lighting"
-        />
-      </div>
+  <figure>
+    <div class="shelf-preview">
+      <img
+        src="/images/mood-01.PNG"
+        alt="Bookroom shelf in Dawn lighting"
+        loading="lazy"
+      />
+    </div>
 
-      <figcaption>
-        <span>Noon</span>
-        <small>Warm, clear and full of detail.</small>
-      </figcaption>
-    </figure>
+    <figcaption>
+      <span>Dawn</span>
+      <small>Soft morning light across the room.</small>
+    </figcaption>
+  </figure>
 
-    <figure>
-      <div class="shelf-preview">
-        <img
-          src="/images/dusk-shelf.jpeg"
-          alt="Bookroom shelf shown with darker dusk lighting"
-        />
-      </div>
+  <figure>
+    <div class="shelf-preview">
+      <img
+        src="/images/mood-02.PNG"
+        alt="Bookroom shelf in Noon lighting"
+        loading="lazy"
+      />
+    </div>
 
-      <figcaption>
-        <span>Dusk</span>
-        <small>A quieter room for later in the day.</small>
-      </figcaption>
-    </figure>
-  </div>
+    <figcaption>
+      <span>Noon</span>
+      <small>Bright, clear and full of detail.</small>
+    </figcaption>
+  </figure>
+
+  <figure>
+    <div class="shelf-preview">
+      <img
+        src="/images/mood-03.PNG"
+        alt="Bookroom shelf in Dusk lighting"
+        loading="lazy"
+      />
+    </div>
+
+    <figcaption>
+      <span>Dusk</span>
+      <small>Warmer light as evening settles in.</small>
+    </figcaption>
+  </figure>
+
+  <figure>
+    <div class="shelf-preview">
+      <img
+        src="/images/mood-04.PNG"
+        alt="Bookroom shelf in Night lighting"
+        loading="lazy"
+      />
+    </div>
+
+    <figcaption>
+      <span>Night</span>
+      <small>Candles and lamps bring the shelf to life.</small>
+    </figcaption>
+  </figure>
+</div>
 
   <div class="container details-row">
     <article>
@@ -152,6 +187,11 @@ import { site } from "../config/site";
     </article>
   </div>
 </section>
+<TrackReading />
+<RememberEveryRead />
+<UnlockRoom />
+<ShareShelf />
+<FinalCTA />
 </BaseLayout>
 
 <style>
@@ -322,8 +362,8 @@ import { site } from "../config/site";
 
 .comparison {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: clamp(30px, 5vw, 60px);
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 24px;
   margin-top: 80px;
 }
 
@@ -333,9 +373,8 @@ import { site } from "../config/site";
 
 .shelf-preview {
   overflow: hidden;
-  max-height: 610px;
   background: var(--color-walnut-900);
-  box-shadow: 0 28px 70px rgb(43 28 22 / 14%);
+  box-shadow: 0 24px 55px rgb(43 28 22 / 14%);
 }
 
 .shelf-preview img {
@@ -345,23 +384,21 @@ import { site } from "../config/site";
 }
 
 .comparison figcaption {
-  display: flex;
-  justify-content: space-between;
-  gap: 20px;
-  padding-top: 18px;
+  padding-top: 16px;
 }
 
 .comparison figcaption span {
+  display: block;
   font-family: var(--font-display);
-  font-size: 20px;
+  font-size: 22px;
 }
 
 .comparison figcaption small {
-  max-width: 220px;
+  display: block;
+  margin-top: 5px;
   color: var(--color-text-dark-muted);
   font-size: 12px;
-  line-height: 1.6;
-  text-align: right;
+  line-height: 1.55;
 }
 
 .details-row {
@@ -397,6 +434,13 @@ import { site } from "../config/site";
 .details-row p {
   margin: 14px 0 0;
   color: var(--color-text-dark-muted);
+}
+
+@media (max-width: 1000px) {
+  .comparison {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 40px 24px;
+  }
 }
 
   @media (max-width: 900px) {
@@ -439,22 +483,17 @@ import { site } from "../config/site";
 }
 
 .comparison {
-  gap: 50px;
-  margin-top: 55px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 32px 14px;
+  margin-top: 50px;
 }
 
-.shelf-preview {
-  max-height: none;
-}
-
-.comparison figcaption {
-  flex-direction: column;
-  gap: 4px;
+.comparison figcaption span {
+  font-size: 19px;
 }
 
 .comparison figcaption small {
-  max-width: none;
-  text-align: left;
+  font-size: 11px;
 }
 
 .details-row {

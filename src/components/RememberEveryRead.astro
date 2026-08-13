@@ -1,0 +1,339 @@
+<section class="memories">
+  <div class="container memories-grid">
+    <div class="memories-copy">
+      <p class="eyebrow">Remember every read</p>
+
+      <h2 class="section-title">
+        A finished book<br />
+        is not the end of it.
+      </h2>
+
+      <p class="lead">
+        Keep the history around a book, not just the fact that you finished it.
+      </p>
+
+      <p>
+        Bookroom preserves when you read, how you rated it and the private
+        memories you want to keep alongside that reading.
+      </p>
+
+      <div class="memory-points">
+        <article>
+          <span>Reading history</span>
+          <p>
+            Start dates, finish dates and ratings stay attached to the reading
+            that created them.
+          </p>
+        </article>
+
+        <article>
+          <span>Private Shelf Memories</span>
+          <p>
+            Keep personal notes about a read without turning them into public
+            reviews or including them in shared shelf images.
+          </p>
+        </article>
+
+        <article>
+          <span>Rereads stay distinct</span>
+          <p>
+            Read the same book again and Bookroom creates another record rather
+            than overwriting the first.
+          </p>
+        </article>
+      </div>
+    </div>
+
+    <div class="memory-visual" aria-label="Reading history screen placeholder">
+      <div class="paper">
+        <div class="book-heading">
+          <span class="book-label">Finished</span>
+          <h3>The Winter House</h3>
+          <p>A reading remembered.</p>
+        </div>
+
+        <div class="record">
+          <div>
+            <small>Started</small>
+            <strong>14 January</strong>
+          </div>
+
+          <div>
+            <small>Finished</small>
+            <strong>28 January</strong>
+          </div>
+
+          <div>
+            <small>Rating</small>
+            <strong>4.5 / 5</strong>
+          </div>
+        </div>
+
+        <div class="memory-note">
+          <small>Shelf Memory</small>
+
+          <p>
+            The sort of book that made the room disappear for a few evenings.
+          </p>
+
+          <span>Private</span>
+        </div>
+
+        <div class="reread">
+          <span>Reading history</span>
+
+          <div>
+            <strong>First read</strong>
+            <small>January 2026</small>
+          </div>
+
+          <div>
+            <strong>Read again</strong>
+            <small>Another reading can be added later</small>
+          </div>
+        </div>
+      </div>
+
+      <span class="placeholder-label">Final app screenshot pending</span>
+    </div>
+  </div>
+</section>
+
+<style>
+  .memories {
+    padding: 120px 0;
+    background: var(--color-cream-50);
+  }
+
+  .memories-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 410px;
+    gap: clamp(70px, 10vw, 140px);
+    align-items: center;
+  }
+
+  .memories-copy {
+    max-width: 640px;
+  }
+
+  .memories-copy .lead {
+    margin: 32px 0 0;
+    color: var(--color-text-dark);
+    font-family: var(--font-display);
+    font-size: 24px;
+    line-height: 1.5;
+  }
+
+  .memories-copy > p:not(.eyebrow):not(.lead) {
+    max-width: 550px;
+    margin: 20px 0 0;
+    color: var(--color-text-dark-muted);
+    font-size: 17px;
+  }
+
+  .memory-points {
+    margin-top: 48px;
+    border-top: 1px solid var(--color-cream-200);
+  }
+
+  .memory-points article {
+    display: grid;
+    grid-template-columns: 180px minmax(0, 1fr);
+    gap: 28px;
+    padding: 22px 0;
+    border-bottom: 1px solid var(--color-cream-200);
+  }
+
+  .memory-points span {
+    font-family: var(--font-display);
+    font-size: 19px;
+  }
+
+  .memory-points p {
+    margin: 0;
+    color: var(--color-text-dark-muted);
+    font-size: 14px;
+  }
+
+  .memory-visual {
+    position: relative;
+  }
+
+  .paper {
+    padding: 42px 34px;
+    border: 1px solid var(--color-cream-200);
+    background: #f7f0e2;
+    box-shadow: 0 32px 75px rgb(43 28 22 / 14%);
+  }
+
+  .book-heading {
+    padding-bottom: 30px;
+    border-bottom: 1px solid #d9ccb4;
+  }
+
+  .book-label {
+    color: var(--color-burgundy);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+  }
+
+  .book-heading h3 {
+    margin: 12px 0 0;
+    font-family: var(--font-display);
+    font-size: 38px;
+    font-weight: 400;
+    letter-spacing: -0.025em;
+  }
+
+  .book-heading p {
+    margin: 8px 0 0;
+    color: var(--color-text-dark-muted);
+    font-family: var(--font-display);
+    font-style: italic;
+  }
+
+  .record {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin-top: 30px;
+  }
+
+  .record > div {
+    padding-right: 12px;
+  }
+
+  .record > div + div {
+    padding-left: 15px;
+    border-left: 1px solid #d9ccb4;
+  }
+
+  .record small,
+  .memory-note small {
+    display: block;
+    color: var(--color-text-dark-muted);
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  .record strong {
+    display: block;
+    margin-top: 6px;
+    font-family: var(--font-display);
+    font-size: 16px;
+    font-weight: 400;
+  }
+
+  .memory-note {
+    margin-top: 36px;
+    padding: 24px;
+    border-left: 3px solid var(--color-brass);
+    background: rgb(255 255 255 / 38%);
+  }
+
+  .memory-note p {
+    margin: 14px 0 0;
+    font-family: var(--font-display);
+    font-size: 19px;
+    font-style: italic;
+    line-height: 1.55;
+  }
+
+  .memory-note span {
+    display: inline-block;
+    margin-top: 18px;
+    color: var(--color-burgundy);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  .reread {
+    margin-top: 36px;
+    padding-top: 28px;
+    border-top: 1px solid #d9ccb4;
+  }
+
+  .reread > span {
+    display: block;
+    margin-bottom: 18px;
+    font-family: var(--font-display);
+    font-size: 20px;
+  }
+
+  .reread > div {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 12px 0;
+    border-top: 1px solid rgb(101 95 84 / 14%);
+  }
+
+  .reread strong {
+    font-size: 13px;
+  }
+
+  .reread small {
+    color: var(--color-text-dark-muted);
+    font-size: 11px;
+    text-align: right;
+  }
+
+  .placeholder-label {
+    display: block;
+    margin-top: 14px;
+    color: var(--color-text-dark-muted);
+    font-size: 10px;
+    text-align: center;
+  }
+
+  @media (max-width: 850px) {
+    .memories-grid {
+      grid-template-columns: minmax(0, 1fr) 350px;
+      gap: 55px;
+    }
+  }
+
+  @media (max-width: 700px) {
+    .memories {
+      padding: 80px 0;
+    }
+
+    .memories-grid {
+      grid-template-columns: 1fr;
+      gap: 55px;
+    }
+
+    .memory-visual {
+      width: min(100%, 410px);
+      margin-inline: auto;
+    }
+
+    .memory-points article {
+      grid-template-columns: 1fr;
+      gap: 8px;
+    }
+
+    .paper {
+      padding: 32px 24px;
+    }
+
+    .record {
+      grid-template-columns: 1fr;
+    }
+
+    .record > div {
+      padding: 12px 0;
+    }
+
+    .record > div + div {
+      padding-left: 0;
+      border-top: 1px solid #d9ccb4;
+      border-left: 0;
+    }
+  }
+</style>
