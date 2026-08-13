@@ -1,0 +1,228 @@
+<section class="lighting" data-lighting-showcase>
+  <div class="container lighting-grid">
+    <div class="lighting-copy">
+      <p class="eyebrow">Make it yours</p>
+
+      <h2 class="section-title">
+        Change the room.<br />
+        Change the mood.
+      </h2>
+
+      <p class="lead">
+        Your shelf does not have to feel the same every time you open it.
+      </p>
+
+      <p>
+        Shift the lighting throughout the day and the room changes with it.
+        As the shelf darkens, candles and lamps become part of the atmosphere
+        rather than just decoration.
+      </p>
+
+      <div class="lighting-options" aria-label="Preview lighting settings">
+        {
+          [1, 2, 3, 4].map((number) => (
+            <button
+              type="button"
+              class:list={["lighting-option", { selected: number === 1 }]}
+              data-lighting-option
+              data-src={`/images/mood-0${number}.PNG`}
+              aria-label={`Preview lighting option ${number}`}
+              aria-pressed={number === 1 ? "true" : "false"}
+            >
+              <img
+                src={`/images/mood-0${number}.PNG`}
+                alt=""
+                loading="lazy"
+              />
+            </button>
+          ))
+        }
+      </div>
+
+      <p class="hint">Choose a preview to change the room.</p>
+    </div>
+
+    <div class="lighting-visual">
+      <div class="phone-frame">
+        <img
+          data-main-image
+          src="/images/mood-01.PNG"
+          alt="Bookroom shelf with adjustable room lighting"
+        />
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  const showcase = document.querySelector("[data-lighting-showcase]");
+
+  if (showcase) {
+    const mainImage =
+      showcase.querySelector<HTMLImageElement>("[data-main-image]");
+
+    const options =
+      showcase.querySelectorAll<HTMLButtonElement>("[data-lighting-option]");
+
+    options.forEach((option) => {
+      option.addEventListener("click", () => {
+        const src = option.dataset.src;
+
+        if (!src || !mainImage) return;
+
+        mainImage.src = src;
+
+        options.forEach((button) => {
+          const selected = button === option;
+
+          button.classList.toggle("selected", selected);
+          button.setAttribute(
+            "aria-pressed",
+            selected ? "true" : "false"
+          );
+        });
+      });
+    });
+  }
+</script>
+
+<style>
+  .lighting {
+    padding: 120px 0;
+    background: var(--color-cream-100);
+  }
+
+  .lighting-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 350px;
+    gap: clamp(70px, 10vw, 140px);
+    align-items: center;
+  }
+
+  .lighting-copy {
+    max-width: 600px;
+  }
+
+  .lead {
+    margin: 34px 0 0;
+    color: var(--color-text-dark);
+    font-family: var(--font-display);
+    font-size: 24px;
+    line-height: 1.5;
+  }
+
+  .lead + p {
+    max-width: 540px;
+    margin: 20px 0 0;
+    color: var(--color-text-dark-muted);
+    font-size: 17px;
+  }
+
+  .lighting-options {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    max-width: 430px;
+    margin-top: 42px;
+  }
+
+  .lighting-option {
+    position: relative;
+    overflow: hidden;
+    padding: 0;
+    border: 1px solid var(--color-cream-200);
+    border-radius: 8px;
+    background: var(--color-forest-950);
+    cursor: pointer;
+    opacity: 0.62;
+    transition:
+      opacity 160ms ease,
+      transform 160ms ease,
+      border-color 160ms ease;
+  }
+
+  .lighting-option:hover,
+  .lighting-option:focus-visible {
+    opacity: 0.9;
+  }
+
+  .lighting-option:focus-visible {
+    outline: 2px solid var(--color-burgundy);
+    outline-offset: 3px;
+  }
+
+  .lighting-option.selected {
+    border-color: var(--color-brass);
+    opacity: 1;
+    transform: translateY(-3px);
+  }
+
+  .lighting-option img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 710 / 1536;
+    object-fit: cover;
+  }
+
+  .hint {
+    margin: 12px 0 0;
+    color: var(--color-text-dark-muted);
+    font-size: 12px;
+  }
+
+  .lighting-visual {
+    display: flex;
+    justify-content: center;
+  }
+
+  .phone-frame {
+    width: 350px;
+    padding: 7px;
+    overflow: hidden;
+    border: 1px solid rgb(0 0 0 / 12%);
+    border-radius: 42px;
+    background: #090b09;
+    box-shadow: 0 38px 80px rgb(43 28 22 / 22%);
+  }
+
+  .phone-frame > img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 35px;
+  }
+
+  @media (max-width: 800px) {
+    .lighting-grid {
+      grid-template-columns: minmax(0, 1fr) 290px;
+      gap: 50px;
+    }
+
+    .phone-frame {
+      width: 290px;
+    }
+  }
+
+  @media (max-width: 700px) {
+    .lighting {
+      padding: 80px 0;
+    }
+
+    .lighting-grid {
+      grid-template-columns: 1fr;
+      gap: 55px;
+    }
+
+    .lighting-options {
+      max-width: 100%;
+    }
+
+    .lighting-visual {
+      justify-content: center;
+    }
+
+    .phone-frame {
+      width: min(310px, 82vw);
+    }
+  }
+</style>
