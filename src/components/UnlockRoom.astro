@@ -1,10 +1,10 @@
 <section class="unlocks">
   <div class="container unlocks-grid">
-    <div class="unlock-visual" aria-label="Achievement and decoration placeholder">
+    <div class="unlock-visual" aria-label="Stamp Book illustration">
       <div class="cabinet">
         <div class="cabinet-heading">
-          <span>Reading achievements</span>
-          <small>Final app screenshot pending</small>
+          <span>Stamp Book</span>
+          <small>Collectible reading milestones</small>
         </div>
 
         <div class="achievement featured">
@@ -18,17 +18,15 @@
         </div>
 
         <div class="reward">
-          <span>Unlocked</span>
+          <span>Collected</span>
 
-          <div class="reward-object">
-            <div class="lamp-shade"></div>
-            <div class="lamp-stem"></div>
-            <div class="lamp-base"></div>
+          <div class="reward-object" aria-hidden="true">
+            <div class="stamp-mini">★</div>
           </div>
 
           <div>
-            <strong>Reading Lamp</strong>
-            <p>A new decoration for your room.</p>
+            <strong>Rereader</strong>
+            <p>Finish a book you have read before.</p>
           </div>
         </div>
 
@@ -45,28 +43,28 @@
 
           <div>
             <span>7</span>
-            <small>Finished</small>
+            <small>Stamps</small>
           </div>
         </div>
       </div>
     </div>
 
     <div class="unlock-copy">
-      <p class="eyebrow">Unlock your reading room</p>
+      <p class="eyebrow">Collect your stamps</p>
 
       <h2 class="section-title">
-        Let the room grow<br />
-        with your reading.
+        Let your reading<br />
+        leave a mark.
       </h2>
 
       <p class="lead">
-        Achievements should leave something behind.
+        Reading milestones become part of your Stamp Book.
       </p>
 
       <p>
-        Reading milestones can unlock new decorations for your shelf, giving
-        progress a physical place inside the room rather than reducing it to
-        another badge collection.
+        Finish books, reread old favourites and build your library to collect
+        stamps that mark the shape of your reading life. Decorations are
+        separate, so you can arrange the room freely from the start.
       </p>
 
       <div class="unlock-points">
@@ -86,10 +84,10 @@
           <span>02</span>
 
           <div>
-            <h3>Unlock</h3>
+            <h3>Collect</h3>
             <p>
-              Achievements reveal decorations and objects that can become part
-              of your shelf.
+              Milestones add stamps to your Stamp Book as your reading history
+              grows.
             </p>
           </div>
         </article>
@@ -98,10 +96,10 @@
           <span>03</span>
 
           <div>
-            <h3>Keep it</h3>
+            <h3>Look back</h3>
             <p>
-              The reward becomes part of the reading room itself, changing what
-              your shelf looks like over time.
+              Your collected stamps become another record of the books, habits
+              and moments that shaped your library.
             </p>
           </div>
         </article>
@@ -227,9 +225,23 @@
   }
 
   .reward-object {
-    position: relative;
+    display: grid;
     width: 62px;
     height: 88px;
+    place-items: center;
+  }
+
+  .stamp-mini {
+    display: grid;
+    width: 58px;
+    height: 58px;
+    place-items: center;
+    border: 1px solid var(--color-brass);
+    border-radius: 50%;
+    color: var(--color-brass);
+    font-family: var(--font-display);
+    font-size: 25px;
+    transform: rotate(-6deg);
   }
 
   .lamp-shade {
