@@ -1,44 +1,12 @@
 <section class="tracking">
   <div class="container tracking-grid">
     <div class="tracking-visual">
-      <div class="screen-placeholder" aria-label="Illustrated reading progress summary">
-        <div class="placeholder-top">
-          <span>Progress</span>
-          <small>Reading almanac</small>
-        </div>
-
-        <div class="placeholder-stat">
-          <strong>61</strong>
-          <span>books finished</span>
-        </div>
-
-        <div class="placeholder-metrics">
-          <div>
-            <strong>26,429</strong>
-            <span>pages</span>
-          </div>
-
-          <div>
-            <strong>45</strong>
-            <span>this year</span>
-          </div>
-
-          <div>
-            <strong>3.8</strong>
-            <span>per month</span>
-          </div>
-        </div>
-
-        <div class="placeholder-chart">
-          <span style="height: 32%"></span>
-          <span style="height: 18%"></span>
-          <span style="height: 24%"></span>
-          <span style="height: 42%"></span>
-          <span style="height: 20%"></span>
-          <span style="height: 15%"></span>
-          <span style="height: 22%"></span>
-          <span style="height: 70%"></span>
-        </div>
+      <div class="screen-frame">
+        <img
+          src="/images/bookroom-progress-stats.jpg"
+          alt="Bookroom Progress screen showing yearly reading statistics, finished books, pages read and a monthly reading chart"
+          loading="lazy"
+        />
       </div>
     </div>
 
@@ -110,7 +78,7 @@
 
   .tracking-grid {
     display: grid;
-    grid-template-columns: 380px minmax(0, 1fr);
+    grid-template-columns: 360px minmax(0, 1fr);
     gap: clamp(70px, 10vw, 140px);
     align-items: center;
   }
@@ -120,103 +88,19 @@
     justify-content: center;
   }
 
-  .screen-placeholder {
-    width: 360px;
-    min-height: 620px;
-    padding: 34px 28px;
+  .screen-frame {
+    width: 330px;
+    overflow: hidden;
     border: 1px solid rgb(245 239 227 / 12%);
     border-radius: 36px;
     background: var(--color-cream-50);
-    color: var(--color-text-dark);
     box-shadow: 0 38px 80px rgb(0 0 0 / 24%);
   }
 
-  .placeholder-top {
-    display: flex;
-    justify-content: space-between;
-    gap: 1rem;
-    align-items: baseline;
-    padding-bottom: 22px;
-    border-bottom: 1px solid var(--color-cream-200);
-  }
-
-  .placeholder-top span {
-    font-family: var(--font-display);
-    font-size: 24px;
-  }
-
-  .placeholder-top small {
-    max-width: 130px;
-    color: var(--color-text-dark-muted);
-    font-size: 10px;
-    line-height: 1.4;
-    text-align: right;
-  }
-
-  .placeholder-stat {
-    padding: 50px 0 32px;
-  }
-
-  .placeholder-stat strong {
+  .screen-frame img {
     display: block;
-    font-family: var(--font-display);
-    font-size: 78px;
-    font-weight: 400;
-    line-height: 0.9;
-  }
-
-  .placeholder-stat span {
-    display: block;
-    margin-top: 12px;
-    color: var(--color-text-dark-muted);
-    font-family: var(--font-display);
-    font-size: 25px;
-  }
-
-  .placeholder-metrics {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    padding: 24px 0;
-    border-top: 1px solid var(--color-cream-200);
-    border-bottom: 1px solid var(--color-cream-200);
-  }
-
-  .placeholder-metrics div {
-    padding-right: 10px;
-  }
-
-  .placeholder-metrics div + div {
-    padding-left: 14px;
-    border-left: 1px solid var(--color-cream-200);
-  }
-
-  .placeholder-metrics strong {
-    display: block;
-    font-size: 17px;
-  }
-
-  .placeholder-metrics span {
-    display: block;
-    margin-top: 3px;
-    color: var(--color-text-dark-muted);
-    font-size: 10px;
-  }
-
-  .placeholder-chart {
-    display: flex;
-    height: 190px;
-    gap: 11px;
-    align-items: flex-end;
-    margin-top: 48px;
-    padding: 0 8px 24px;
-    border-bottom: 1px solid var(--color-cream-200);
-  }
-
-  .placeholder-chart span {
-    flex: 1;
-    min-height: 8px;
-    background: var(--color-forest-700);
-    border-radius: 3px 3px 0 0;
+    width: 100%;
+    height: auto;
   }
 
   .tracking-copy {
@@ -278,13 +162,12 @@
 
   @media (max-width: 800px) {
     .tracking-grid {
-      grid-template-columns: 320px minmax(0, 1fr);
+      grid-template-columns: 310px minmax(0, 1fr);
       gap: 50px;
     }
 
-    .screen-placeholder {
-      width: 310px;
-      min-height: 560px;
+    .screen-frame {
+      width: 300px;
     }
   }
 
@@ -302,8 +185,8 @@
       order: -1;
     }
 
-    .screen-placeholder {
-      width: min(340px, 88vw);
+    .screen-frame {
+      width: min(320px, 82vw);
     }
   }
 </style>

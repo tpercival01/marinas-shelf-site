@@ -44,56 +44,14 @@
       </div>
     </div>
 
-    <div class="memory-visual" aria-label="Illustrated reading history">
-      <div class="paper">
-        <div class="book-heading">
-          <span class="book-label">Finished</span>
-          <h3>The Winter House</h3>
-          <p>A reading remembered.</p>
-        </div>
-
-        <div class="record">
-          <div>
-            <small>Started</small>
-            <strong>14 January</strong>
-          </div>
-
-          <div>
-            <small>Finished</small>
-            <strong>28 January</strong>
-          </div>
-
-          <div>
-            <small>Rating</small>
-            <strong>4.5 / 5</strong>
-          </div>
-        </div>
-
-        <div class="memory-note">
-          <small>Shelf Memory</small>
-
-          <p>
-            The sort of book that made the room disappear for a few evenings.
-          </p>
-
-          <span>Private</span>
-        </div>
-
-        <div class="reread">
-          <span>Reading history</span>
-
-          <div>
-            <strong>First read</strong>
-            <small>January 2026</small>
-          </div>
-
-          <div>
-            <strong>Read again</strong>
-            <small>Another reading can be added later</small>
-          </div>
-        </div>
+    <div class="memory-visual">
+      <div class="screen-frame">
+        <img
+          src="/images/bookroom-reading-history.jpg"
+          alt="Bookroom book detail screen showing two separate reading records, reading dates, a five-star rating and a Shelf Memory"
+          loading="lazy"
+        />
       </div>
-
     </div>
   </div>
 </section>
@@ -106,7 +64,7 @@
 
   .memories-grid {
     display: grid;
-    grid-template-columns: minmax(0, 1fr) 410px;
+    grid-template-columns: minmax(0, 1fr) 360px;
     gap: clamp(70px, 10vw, 140px);
     align-items: center;
   }
@@ -155,145 +113,33 @@
   }
 
   .memory-visual {
-    position: relative;
+    display: flex;
+    justify-content: center;
   }
 
-  .paper {
-    padding: 42px 34px;
+  .screen-frame {
+    width: 330px;
+    overflow: hidden;
     border: 1px solid var(--color-cream-200);
-    background: #f7f0e2;
+    border-radius: 36px;
+    background: var(--color-cream-50);
     box-shadow: 0 32px 75px rgb(43 28 22 / 14%);
   }
 
-  .book-heading {
-    padding-bottom: 30px;
-    border-bottom: 1px solid #d9ccb4;
-  }
-
-  .book-label {
-    color: var(--color-burgundy);
-    font-size: 10px;
-    font-weight: 700;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
-  }
-
-  .book-heading h3 {
-    margin: 12px 0 0;
-    font-family: var(--font-display);
-    font-size: 38px;
-    font-weight: 400;
-    letter-spacing: -0.025em;
-  }
-
-  .book-heading p {
-    margin: 8px 0 0;
-    color: var(--color-text-dark-muted);
-    font-family: var(--font-display);
-    font-style: italic;
-  }
-
-  .record {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    margin-top: 30px;
-  }
-
-  .record > div {
-    padding-right: 12px;
-  }
-
-  .record > div + div {
-    padding-left: 15px;
-    border-left: 1px solid #d9ccb4;
-  }
-
-  .record small,
-  .memory-note small {
+  .screen-frame img {
     display: block;
-    color: var(--color-text-dark-muted);
-    font-size: 9px;
-    font-weight: 700;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-  }
-
-  .record strong {
-    display: block;
-    margin-top: 6px;
-    font-family: var(--font-display);
-    font-size: 16px;
-    font-weight: 400;
-  }
-
-  .memory-note {
-    margin-top: 36px;
-    padding: 24px;
-    border-left: 3px solid var(--color-brass);
-    background: rgb(255 255 255 / 38%);
-  }
-
-  .memory-note p {
-    margin: 14px 0 0;
-    font-family: var(--font-display);
-    font-size: 19px;
-    font-style: italic;
-    line-height: 1.55;
-  }
-
-  .memory-note span {
-    display: inline-block;
-    margin-top: 18px;
-    color: var(--color-burgundy);
-    font-size: 10px;
-    font-weight: 700;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-  }
-
-  .reread {
-    margin-top: 36px;
-    padding-top: 28px;
-    border-top: 1px solid #d9ccb4;
-  }
-
-  .reread > span {
-    display: block;
-    margin-bottom: 18px;
-    font-family: var(--font-display);
-    font-size: 20px;
-  }
-
-  .reread > div {
-    display: flex;
-    justify-content: space-between;
-    gap: 20px;
-    padding: 12px 0;
-    border-top: 1px solid rgb(101 95 84 / 14%);
-  }
-
-  .reread strong {
-    font-size: 13px;
-  }
-
-  .reread small {
-    color: var(--color-text-dark-muted);
-    font-size: 11px;
-    text-align: right;
-  }
-
-  .placeholder-label {
-    display: block;
-    margin-top: 14px;
-    color: var(--color-text-dark-muted);
-    font-size: 10px;
-    text-align: center;
+    width: 100%;
+    height: auto;
   }
 
   @media (max-width: 850px) {
     .memories-grid {
-      grid-template-columns: minmax(0, 1fr) 350px;
+      grid-template-columns: minmax(0, 1fr) 310px;
       gap: 55px;
+    }
+
+    .screen-frame {
+      width: 300px;
     }
   }
 
@@ -317,22 +163,8 @@
       gap: 8px;
     }
 
-    .paper {
-      padding: 32px 24px;
-    }
-
-    .record {
-      grid-template-columns: 1fr;
-    }
-
-    .record > div {
-      padding: 12px 0;
-    }
-
-    .record > div + div {
-      padding-left: 0;
-      border-top: 1px solid #d9ccb4;
-      border-left: 0;
+    .screen-frame {
+      width: min(320px, 82vw);
     }
   }
 </style>
